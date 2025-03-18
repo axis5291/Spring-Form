@@ -13,18 +13,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="forms")
-public class Form {    //개별신청서 클래스, 이렇게 작성을 하게 되면 디비에 실제로 테이블이 생성된다..
+@Table(name="applications")
+public class Application{    //신청서를 위한 클래스, 이렇게 작성을 하게 되면 디비에 실제로 테이블이 생성된다..
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable=false, length = 100)
-    private String title;
-
     @Column(nullable=false, length = 500)
-    private String description;   //설명서
+    private String writerName;   //작성자
+
+    @Column(nullable=false, length = 100)
+    private String content;
+
+    @Column(nullable=false, length = 10)
+    private Character gender;
+
+    @Column(nullable=false )
+    private Integer ageRange;    //연령대
 
     @CreationTimestamp
     @Column(nullable=false, updatable=false)

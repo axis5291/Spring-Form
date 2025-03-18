@@ -1,0 +1,16 @@
+*테이블이 자동으로 생성되게 만드는 기본조건(3가지)
+1.resources->appllication.properties파일에서  spring.jpa.hibernate.ddl-auto=update 가 있어야 테이블이 자동으로 생성된다.
+2.@Entity 어노테이션이 있는 엔터티 클래스가 존재해야 함
+3.@Id가 있어야 함
+ @Entity클래스 안에서 
+ @Table(name = "users":테이블 이름 지정, 지정안하면 클래스 이름으로 테이블이 생성
+ @Column 등 기타설정
+
+ #spring.jpa.hibernate.ddl-auto=옵션값     옵션 정리
+    옵션 값 	                동작
+    none	        자동 생성 X (테이블을 직접 생성해야 함)
+    validate	    테이블이 있는지만 확인, 없으면 에러 발생
+    update	        기존 테이블이 없으면 생성하고, 필드 변경 시 업데이트
+    create	        기존 테이블을 삭제 후 새로 생성
+    create-drop	    앱 종료 시 테이블 삭제 (create와 유사)
+
