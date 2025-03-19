@@ -11,10 +11,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Builder;
+import lombok.Getter;
 
 @Entity
+@Builder
+@Getter
 @Table(name="applications")
-public class Application{    //신청서를 위한 클래스, 이렇게 작성을 하게 되면 디비에 실제로 테이블이 생성된다..
+public class ApplicationEntity{    //신청서를 위한 클래스, 이렇게 작성을 하게 되면 디비에 실제로 테이블이 생성된다..
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
