@@ -33,7 +33,7 @@ public class FormServiceImpl implements FormService {
     public FormDto find(Long id) {    // id를 이용해 FormDto 객체를 반환하는 메서드
         return formRepository.findById(id) // formRepository에서 주어진 id로 FormEntity를 찾음 (Optional<FormEntity> 반환)
                   .map(FormEntity::toFormDto) // Optional이 비어있지 않다면 FormEntity의 toRead() 메서드를 호출해 FormDto로 변환
-                  .orElseThrow(() -> new RuntimeException("해당 ID의 데이터를 찾을 수 없습니다."));   // Optional이 비어있다면 예외를 발생시켜 "해당 ID의 데이터를 찾을 수 없습니다."라는 메시지를 반환
+                  .orElseThrow(() -> new RuntimeException("FormServiceImpl에서 메세지:해당 ID의 데이터를 찾을 수 없습니다."));   // Optional이 비어있다면 예외를 발생시켜 "해당 ID의 데이터를 찾을 수 없습니다."라는 메시지를 반환
     }
     
     
