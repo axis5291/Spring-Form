@@ -1,6 +1,6 @@
 package org.axis.form.dto;
 
-
+import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,5 +14,6 @@ public class FormRead {   //엔티티의 모든 정보를 고객에게 주는게
     private String title;
     private String description;
     private LocalDateTime createDate;
+
         
 }
