@@ -7,5 +7,6 @@
     "comments": "#f6ea06"  // 주석 색상 변경 (노란색)
   },
   "java.configuration.imports.gradle.enabled": true,
-  "java.configuration.imports.maven.enabled": true
+  "java.configuration.imports.maven.enabled": true,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
