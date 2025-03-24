@@ -8,5 +8,6 @@
   },
   "java.configuration.imports.gradle.enabled": true,
   "java.configuration.imports.maven.enabled": true,
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "bitoAI.codeCompletion.enableAutoCompletion": false
 }
