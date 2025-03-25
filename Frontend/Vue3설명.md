@@ -9,4 +9,9 @@ index.html의 head 부분의 link아랫부분에 붙여넣기 하면 쓸수 있�
 이런식으로...
 
 
+======================
+
+ npm i sass로 frontend 폴더위치에 설치하여  App.vue의 <style lang="scss">로 scss문법을 쓸 수 있게 한다.
+ 
+  
 
