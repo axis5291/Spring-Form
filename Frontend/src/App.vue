@@ -24,9 +24,22 @@
 
 <style lang="scss">
   header{
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
     h1{
       font-size: 20px;
       font-weight: bold;
     }
+  }
+
+  footer{
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+  }
+
+  main{
+    padding: 30px 0;
   }
 </style>
