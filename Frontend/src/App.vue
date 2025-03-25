@@ -5,8 +5,8 @@
 <template>
   <header>
     <div class="container">
-        <h1> 신청서 애플리케이션  </h1>
-    </div>
+      <router-link to="/"><h1> 신청서 애플리케이션  </h1></router-link>    <!-- <router-link to="/">:여기를 클릭하면 /으로 이동합니다. -->
+     </div>
   </header>     
   <main>                              <!-- main태그:웹 페이지의 주요 콘텐츠를 담는 역할,   body태그:모든 콘텐츠를 읽음-->
     <div class="container">
@@ -22,24 +22,27 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   header{
     padding: 30px 0;
     border-bottom: 1px solid #ddd;
     margin-bottom: 30px;
     h1{
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 500px;
+      a{
+        text-decoration: none;
+        color: inherit;
+       
+      }
     }
   }
 
   footer{
-    padding-top: 30px;
+    padding: 30px 0;
     margin-top: 30px;
     border-top: 1px solid #ddd;
   }
 
-  main{
-    padding: 30px 0;
-  }
+ 
 </style>

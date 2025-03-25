@@ -24,7 +24,9 @@ public class FormController {
     @GetMapping("/api/forms")   //http://localhost:8080/v1/api/forms 으로 접속
     public ResponseEntity<List<FormDto>> readAll(){
         List<FormDto> formDto=formService.findAll();
-        return new ResponseEntity<>(formDto, HttpStatus.OK);   
+        System.out.println("클라이어트 디비서버 조회요청을 처리하였습니다.");  
+        return new ResponseEntity<>(formDto, HttpStatus.OK); 
+       
     }
 
     @GetMapping("/api/forms/{id}")

@@ -8,8 +8,15 @@ const router = createRouter({
       name: 'home',    //home컴포넌트가 사용되어진다.
       component: import('../views/Home.vue'), //home 컴포넌트가 위치한 곳
     },
+    {
+      path: '/forms/:id',       //:id는 동적으로 변하는 값이다.
+      name: 'application',    
+      component: import('../views/Application.vue'), 
+    },
+
+    
    
-  ],
+  ]
 })
 
 export default router
