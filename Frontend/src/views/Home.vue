@@ -20,21 +20,23 @@ const state = reactive({
   forms: []
 });
 
-(async () => {
+// (async () => {     //강의코드드
+//   state.forms = await formService.readAll();
+// })();
+
+
+
+const fetchForms = async () => {      // 비동기 데이터 불러오기(Ai 추천)
   state.forms = await formService.readAll();
-})();
+  
+  state.forms.forEach(f => {
+    console.log(f.title);   // 각 form 객체의 title을 출력
+  });
+};
+
+onMounted(() => {      // 컴포넌트가 마운트되면 데이터 불러오기
+  fetchForms(); 
+});
 
 
-// // 비동기 데이터 불러오기
-// const fetchForms = async () => {
-//   state.forms = await formServices.readAll();
-//   // 각 form 객체의 title을 출력
-//   state.forms.forEach(f => {
-//     console.log(f.title);
-//   });
-// };
-
-// onMounted(() => {
-//   fetchForms(); // 컴포넌트가 마운트되면 데이터 불러오기
-// });
 </script>
