@@ -9,6 +9,7 @@ export default {
 
         async read(id){
             const res = await axios.get(`/v1/api/forms/${id}`);   //백틱으로 입력해야 id값을 받아올 수 있다.
+            console.log(res.data, "id값을 받아옴");
             return res.data;
         }
     }

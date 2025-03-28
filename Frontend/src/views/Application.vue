@@ -54,13 +54,13 @@
 
 <script setup>
 import { reactive } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import formService from "@/services/formService";
 import applicationService from '@/services/applicationService';
 
 const route=useRoute();   // 현재 URL 정보를 가져옴
 const router = useRouter();  // 라우터 객체 추가
-const formId=route.params.id;  // URL의 "id" 파라미터 값을 가져옴
+
 
 
 // useRouter() 추가: route.push("/")를 사용하려면 useRouter()를 통해 router 객체를 가져와야 합니다. 
@@ -85,6 +85,12 @@ const state = reactive({
     }
 });
 
+(async()=>{    //이 컴포넌트가 로드될 때 무조건 실행되는 비동기 함수
+    const formId=route.params.id;
+    state.form=await formService.read(formId);
+    console.log(form.title, ":불러오기 완료");
+})();
+
 const submit = async() => {
 
     if(!state.inputs.writerName){
@@ -94,7 +100,8 @@ const submit = async() => {
     }
 
 
-   const result=await (applicationService.save( state.inputs));
+   const result=await applicationService.save(state.inputs);
+   console.log(result, "가 제출되었습니다.");
     if(result){
       window.alert("신청서가 제출되었습니다.");
       router.push("/");  //홈으로 이동
@@ -105,10 +112,7 @@ const submit = async() => {
 };
 
 
-(async()=>{    //이 컴포넌트가 로드될 때 무조건 실행되는 비동기 함수
-    state.form=await formService.read(formId);
-    console.log(form.title, ":불러오기 완료");
-})();
+
 </script>
 
 <style lang="scss" scoped>
