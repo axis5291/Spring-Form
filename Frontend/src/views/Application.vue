@@ -58,6 +58,17 @@ import { useRoute } from "vue-router";
 import formService from "@/services/formService";
 import applicationService from '@/services/applicationService';
 
+const route=useRoute();   // 현재 URL 정보를 가져옴
+const router = useRouter();  // 라우터 객체 추가
+const formId=route.params.id;  // URL의 "id" 파라미터 값을 가져옴
+
+
+// useRouter() 추가: route.push("/")를 사용하려면 useRouter()를 통해 router 객체를 가져와야 합니다. 
+// useRoute()는 현재 라우트 정보를 가져오는 반면, 
+// useRouter()는 라우터 인스턴스를 제공하여 페이지 이동을 제어할 수 있습니다.
+
+
+
 const state = reactive({
     form:{            //신청서에 관한것들을 저장하는 객체
         id:0,
@@ -86,15 +97,13 @@ const submit = async() => {
    const result=await (applicationService.save( state.inputs));
     if(result){
       window.alert("신청서가 제출되었습니다.");
-      route.push("/");  //홈으로 이동
+      router.push("/");  //홈으로 이동
       return ;
     }else{
       window.alert("제출에 실패했습니다.");
     }
 };
 
-const route=useRoute();   // 현재 URL 정보를 가져옴
-const formId=route.params.id;  // URL의 "id" 파라미터 값을 가져옴
 
 (async()=>{    //이 컴포넌트가 로드될 때 무조건 실행되는 비동기 함수
     state.form=await formService.read(formId);
