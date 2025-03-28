@@ -5,7 +5,7 @@
       <!-- state.forms 배열의 각 항목을 반복하여 출력 -->
       <li v-for="f in state.forms" :key="f.id">
         <router-link :to="`/forms/${f.id}`">       <!-- 아래 3개중에 아무거나 클릭하면 해당 신청서로 이동합니다. -->
-          <div class="title">{{ f.title }}</div>
+          <center> <div class="title">{{ f.title }}</div></center>
           <div class="desc">{{ f.description }}</div>
           <div class="date">생성일시:{{ f.createDate }}</div>
         </router-link>
@@ -73,6 +73,7 @@ onMounted(() => {
 
         .title {
           font-weight: bold;
+          font-color: rgb(244, 150, 7);
         }
 
         &:hover {

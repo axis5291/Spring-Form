@@ -1,11 +1,9 @@
-<script setup>
-
-</script>
 
 <template>
+  <!--App.vue는 index.html의 <div id="app"></div>위치에 로딩 -->
   <header>
     <div class="container">
-      <router-link to="/"><h1> 신청서 애플리케이션  </h1></router-link>    <!-- <router-link to="/">:여기를 클릭하면 /으로 이동합니다. -->
+      <center><router-link to="/"><h1> 신청서 애플리케이션  </h1></router-link>  </center>   <!-- <router-link to="/">:여기를 클릭하면 /으로 이동합니다. -->
      </div>
   </header>     
   <main>                              <!-- main태그:웹 페이지의 주요 콘텐츠를 담는 역할,   body태그:모든 콘텐츠를 읽음-->
@@ -21,6 +19,10 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+
+</script>
 
 <style lang="scss" scoped>
   header{
