@@ -16,7 +16,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public void save(ApplicationDto applicationDto) {
-       applicationRepository.save(applicationDto.toEntity());
+       applicationRepository.save(applicationDto.toEntity());  // ApplicationDto를 Application entity로 변환하여 DB에 저장
     }
     
  
