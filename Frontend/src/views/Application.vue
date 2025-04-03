@@ -15,7 +15,7 @@
           <div class="mb-4">
             <label for="ageRange" class="form-label">작성자명 </label>
             <select class="form-select" id="ageRange" aria-label="연령대" v-model="state.inputs.ageRange" >
-              <option :value="10">10대</option>           <!-- :value   =>숫자형을 입력할 때 사용 -->
+              <option :value="10">10대</option>           <!-- :value   =>실제로 값이 전달할 목적으로 사용 -->
               <option :value="20">20대</option>
               <option :value="30">30대</option>
               <option :value="40">40대</option>
@@ -47,6 +47,7 @@
               <textarea class="form-control" v-model="state.inputs.content"></textarea>
           </div>
             <button type="submit" class="btn btn-primary w-100 p-3">제출</button>
+            <!-- <form> 태그 안에서 <button type="submit">은 form의 @submit 이벤트와 자동으로 연결되어 실행된다.-->
       </form>
     </div>
 </template>
@@ -96,7 +97,7 @@ const submit = async() => {
 
    const result=await applicationService.save(state.inputs);
    
-   console.log(result.title , "가 제출되었습니다.");
+   console.log(result.message, "라고 서버에서 응답이 왔습니다.");  //ApplicationController에서 key값으로 message를 줬기 때문에 result.message로 접근 가능하다.
     if(result){
       window.alert("신청서가 제출되었습니다.");
       router.push("/");  //홈으로 이동
